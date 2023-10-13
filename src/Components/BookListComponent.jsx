@@ -1,26 +1,16 @@
-import React from 'react'
+import React, { useState,useEffect} from 'react'
+import { ListOfbooks } from "./BookService";
 
 const BookListComponent = () => {
-    const dummyBooks=[
-        {
-            "bookId":1,
-            "name":"Core Java",
-            "author":"Nageshar Rao",
-            "price":699
-        },
-        {
-            "bookId":2,
-            "name":"Web Technology",
-            "author":"Santosh Kumar",
-            "price":499
-        },
-        {
-            "bookId":3,
-            "name":"Java 8",
-            "author":"Durga",
-            "price":449
-        }
-    ]
+    const [books, setBooks]= useState([])
+
+    useEffect(() => {
+        // here req is variavle passing in lambda
+        ListOfbooks().then((req) =>{
+            setBooks(req.data);
+        }).catch(error => console.error(error));
+
+    },[])
   return (
     <div>
         <h2 className='text-center'>List of Books</h2>
@@ -35,10 +25,10 @@ const BookListComponent = () => {
             </thead>
             <tbody>
                 {
-                    dummyBooks.map(book =>
+                    books.map(book =>
                         <tr key={book.bookId}>
                             <td>{book.bookId}</td>
-                            <td>{book.name}</td>
+                            <td>{book.bookName}</td>
                             <td>{book.author}</td>
                             <td>{book.price}</td>
                         </tr>
