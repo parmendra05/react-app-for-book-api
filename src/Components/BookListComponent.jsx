@@ -13,7 +13,7 @@ const BookListComponent = () => {
     },[])
   return (
     <div>
-        <h2 className='text-center'>List of Books</h2>
+        <h2 className='text-center text-success'>List of Books</h2>
         <table className="table table-dark table-striped table border">
             <thead>
                 <tr>
