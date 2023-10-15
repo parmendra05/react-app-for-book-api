@@ -17,9 +17,9 @@ function App() {
         <HeaderComponent/>
           <Routes>
             {/* <BookListComponent> is enable for both end points 
-            http://localhost:3000/ & http://localhost:3000/employees */}
+            http://localhost:3000/ & http://localhost:3000/books */}
             <Route path='/' element={<BookListComponent/>}></Route>
-            <Route path='/employees' element={<BookListComponent/>}></Route>
+            <Route path='/books' element={<BookListComponent/>}></Route>
           </Routes>
        
         <FooterComponent/>
