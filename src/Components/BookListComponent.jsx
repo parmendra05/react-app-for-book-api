@@ -14,7 +14,7 @@ const BookListComponent = () => {
   return (
     <div>
         <h2 className='text-center'>List of Books</h2>
-        <table class="table table-dark table-striped">
+        <table className="table table-dark table-striped table border">
             <thead>
                 <tr>
                     <th>BookId</th>
