@@ -1,8 +1,10 @@
 import React, { useState,useEffect} from 'react'
 import { ListOfbooks } from "./BookService";
+import { useNavigate } from 'react-router-dom';
 
 const BookListComponent = () => {
     const [books, setBooks]= useState([])
+    const navigator = useNavigate();
 
     useEffect(() => {
         // here req is variavle passing in lambda
@@ -11,9 +13,15 @@ const BookListComponent = () => {
         }).catch(error => console.error(error));
 
     },[])
+
+    // Once clicked on "add-New" button then navigate to "/add-book" url
+    function addNewBook(){
+        navigator('/add-book')
+    }
   return (
-    <div>
+    <div className='container'>
         <h2 className='text-center text-success'>List of Books</h2>
+        <button className='btn btn-success' onClick={addNewBook}>Add Book</button>
         <table className="table table-dark table-striped table border">
             <thead>
                 <tr>
