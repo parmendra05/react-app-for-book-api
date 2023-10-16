@@ -13,8 +13,10 @@ const BookComponent = () => {
     console.log(book)
     return (
         <div className='container'>
-            <div className='card'>
-                <h2>Add Book</h2>
+          <br></br>
+          {/* total column =12, use only 6, leave 3 from right & 3 from left  */}
+            <div className='card col-md-6 offset-md-3 offset-md-3'>
+                <h2 className='text-center'>Add Book</h2>
                 <div className="card-body">
                     <form>
                         <div className='form-group mb-2'>
